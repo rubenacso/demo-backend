@@ -1,20 +1,33 @@
 ---
+name: Issue title checker
+description: Check if the issue title follows the specified conventions and add a comment if it doesn't.
 on:
   issues:
     types:
       - opened
 permissions:
   contents: read
-  actions: read
   issues: read
-  pull-requests: read
 engine: copilot
+strict: true
+network:
+  allowed:
+    - defaults
+tools:
+  github:
+    toolsets:
+      - issues
 safe-outputs:
+  update-issue:
+    status:
+    target: "*"
+    max: 3
   add-comment:
-    max: 1
+    target: "*"
+    max: 3
 ---
 
-# check-issue-title
+# Issue title checker
 
 Comprueba que el título de la issue sigue las siguientes convenciones:
 
