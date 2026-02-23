@@ -6,7 +6,7 @@ on:
 permissions:
   contents: read
   actions: read
-  issues: write
+  issues: read
   pull-requests: read
 engine: copilot
 safe-outputs:
